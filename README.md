@@ -1,4 +1,4 @@
-The To-Do App
+The To-Do App,
 An App for managing personal and professional tasks
 
 ## Getting Started
