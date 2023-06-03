@@ -21,3 +21,10 @@ interface Image {
   bucketId: string;
   fileId: string;
 }
+
+interface TaskType {
+  id: string;
+  name: string;
+  description: string;
+  color: string;
+}

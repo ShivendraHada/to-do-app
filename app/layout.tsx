@@ -1,5 +1,6 @@
 import { Nunito } from "@next/font/google";
 import "./globals.css";
+import Modal from "@/components/Modal";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         }
       >
         {children}
+        <Modal />
       </body>
     </html>
   );
