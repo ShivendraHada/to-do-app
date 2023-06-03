@@ -4,11 +4,11 @@ import { FormEvent, Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useModalStore } from "@/store/ModalStore";
 import { useBoardStore } from "@/store/BoardStore";
-import TaskTypeRadioGroup from "./TaskTypeRadioGroup";
+import TaskRadioGroup from "./TaskRadioGroup";
 import Image from "next/image";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 
-function Modal() {
+function AddTaskModal() {
   const imagePickerRef = useRef<HTMLInputElement>(null);
 
   const [addTask, newTaskInput, setNewTaskInput, image, setImage, newTaskType] =
@@ -75,7 +75,7 @@ function Modal() {
                   />
                 </div>
 
-                <TaskTypeRadioGroup />
+                <TaskRadioGroup />
 
                 <div className="mt-2">
                   <button
@@ -129,4 +129,4 @@ function Modal() {
     </Transition>
   );
 }
-export default Modal;
+export default AddTaskModal;

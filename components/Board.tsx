@@ -2,8 +2,7 @@
 import { useBoardStore } from "@/store/BoardStore";
 import { useEffect } from "react";
 import { DragDropContext, DropResult, Droppable } from "react-beautiful-dnd";
-import Column from "./Column";
-
+import TaskColumn from "./TaskColumn";
 function Board() {
   const [board, getBoard, setBoardState, updateTodoInDB] = useBoardStore(
     (state) => [
@@ -97,7 +96,7 @@ function Board() {
             ref={provided.innerRef}
           >
             {Array.from(board.columns.entries()).map(([id, column], index) => (
-              <Column key={id} id={id} todos={column.todos} index={index} />
+              <TaskColumn key={id} id={id} todos={column.todos} index={index} />
             ))}
           </div>
         )}

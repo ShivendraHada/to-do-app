@@ -6,7 +6,6 @@ import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 import { useBoardStore } from "@/store/BoardStore";
 import { useEffect, useState } from "react";
-import fetchSuggestion from "@/utils/fetchSuggestion";
 
 function Header() {
   const [board, setSearchString] = useBoardStore((state) => [
@@ -49,8 +48,8 @@ function Header() {
 
         <div className="flex items-center space-x-5 flex-1 justify-end w-full">
           {/* Search Box */}
-          <form className="flex items-center space-x-5 bg-white rounded-md p-2 shadow-md flex-1 md:flex-initial">
-            <MagnifyingGlassIcon className="h-6 w-6 text-gray-400" />
+          <form className="flex items-center  bg-white rounded-md p-2 shadow-md flex-1 md:flex-initial">
+            <MagnifyingGlassIcon className="mx-1 h-5 w-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search"
@@ -63,7 +62,14 @@ function Header() {
           </form>
 
           {/* Avatar */}
-          <Avatar name="Shivendra Hada" round size="50" color="#fbce08" />
+          <Avatar
+            className="shadow-md"
+            name="Shivendra Hada"
+            round
+            size="50"
+            color="#fccd0a"
+            fgColor="#322a0d"
+          />
         </div>
       </div>
 
@@ -76,7 +82,7 @@ function Header() {
           />
           {suggestion && !loading
             ? suggestion
-            : "GPT is summarising your tasks for the day..."}
+            : "Generating an awesome quote just for you..."}
         </p>
       </div>
     </header>

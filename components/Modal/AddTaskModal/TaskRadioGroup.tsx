@@ -23,7 +23,7 @@ const types: TaskType[] = [
   },
 ];
 
-function TaskTypeRadioGroup() {
+function TaskRadioGroup() {
   const [newTaskType, setNewTaskType] = useBoardStore((state) => [
     state.newTaskType,
     state.setNewTaskType,
@@ -97,4 +97,4 @@ function TaskTypeRadioGroup() {
   );
 }
 
-export default TaskTypeRadioGroup;
+export default TaskRadioGroup;
