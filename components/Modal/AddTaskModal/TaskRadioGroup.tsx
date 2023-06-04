@@ -23,7 +23,7 @@ const types: TaskType[] = [
   },
 ];
 
-function TaskTypeRadioGroup() {
+function TaskRadioGroup() {
   const [newTaskType, setNewTaskType] = useBoardStore((state) => [
     state.newTaskType,
     state.setNewTaskType,
@@ -43,19 +43,12 @@ function TaskTypeRadioGroup() {
               <RadioGroup.Option
                 key={type.id}
                 value={type.id}
-                className={({ active, checked }) =>
-                  `${
-                    active
-                      ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300"
-                      : ""
-                  }
-                  ${
-                    checked
-                      ? `${type.color} bg-opacity-75 text-white`
-                      : "bg-white"
-                  }
-                    relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
+                className={({ active, checked }) => `${
+                  checked
+                    ? `${type.color} bg-opacity-75 text-white`
+                    : "bg-white"
                 }
+                    relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`}
               >
                 {({ active, checked }) => (
                   <>
@@ -73,7 +66,7 @@ function TaskTypeRadioGroup() {
                           <RadioGroup.Description
                             as="span"
                             className={`inline ${
-                              checked ? "text-sky-100" : "text-gray-500"
+                              checked ? "text-gray-200" : "text-gray-500"
                             }`}
                           >
                             <span>{type.description}</span>
@@ -97,4 +90,4 @@ function TaskTypeRadioGroup() {
   );
 }
 
-export default TaskTypeRadioGroup;
+export default TaskRadioGroup;

@@ -4,11 +4,11 @@ import { FormEvent, Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useModalStore } from "@/store/ModalStore";
 import { useBoardStore } from "@/store/BoardStore";
-import TaskTypeRadioGroup from "./TaskTypeRadioGroup";
+import TaskRadioGroup from "./TaskRadioGroup";
 import Image from "next/image";
-import { PhotoIcon } from "@heroicons/react/24/solid";
+import { PhotoIcon, XCircleIcon } from "@heroicons/react/24/solid";
 
-function Modal() {
+function AddTaskModal() {
   const imagePickerRef = useRef<HTMLInputElement>(null);
 
   const [addTask, newTaskInput, setNewTaskInput, image, setImage, newTaskType] =
@@ -46,7 +46,7 @@ function Modal() {
         className="relative z-10"
         onClose={closeModal}
       >
-        <div className="fixed inset-0 overflow-y-auto">
+        <div className="fixed inset-0 overflow-y-auto bg-black/70">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
             <Transition.Child
               as={Fragment}
@@ -64,7 +64,12 @@ function Modal() {
                 >
                   Add a Task
                 </Dialog.Title>
-
+                <button
+                  onClick={() => closeModal()}
+                  className="absolute outline-none top-4 right-4 text-red-500 hover:text-red-600"
+                >
+                  <XCircleIcon className="ml-5 h-6 w-6" />
+                </button>
                 <div className="mt-2">
                   <input
                     type="text"
@@ -75,7 +80,7 @@ function Modal() {
                   />
                 </div>
 
-                <TaskTypeRadioGroup />
+                <TaskRadioGroup />
 
                 <div className="mt-2">
                   <button
@@ -129,4 +134,4 @@ function Modal() {
     </Transition>
   );
 }
-export default Modal;
+export default AddTaskModal;
