@@ -43,13 +43,13 @@ function TaskColumn({ id, todos, index }: TaskColumnProps) {
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className={`px-2 py-1 rounded-2xl shadow-sm ${
-                  snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
+                className={`px-3 pt-1 pb-2 rounded-2xl shadow-sm ${
+                  snapshot.isDraggingOver ? "bg-green-200" : "bg-black/10"
                 }`}
               >
                 <h2 className="flex justify-between font-bold text-xl p-2">
                   {idToColumnText[id]}
-                  <span className="text-gray-500 bg-gray-200 rounded-full px-2 py-1 text-sm font-normal">
+                  <span className="text-gray-500 bg-gray-200 rounded-full px-2.5 py-1 text-sm font-normal">
                     {!searchString
                       ? todos.length
                       : todos.filter((todo) =>

@@ -37,13 +37,13 @@ function Header() {
 
   return (
     <header>
-      <div className="flex flex-col md:flex-row items-center p-5 bg-gray-500/10">
+      <div className="flex flex-col md:flex-row items-center p-5 bg-white/20">
         <Image
           src={Logo}
           alt="To-do App logo"
           width={300}
           height={100}
-          className="w-44 md:w-56 pb-10 md:pb-0 object-contain"
+          className="shadow-md w-44 md:w-56 mb-8 md:mb-0 object-contain"
         />
 
         <div className="flex items-center space-x-5 flex-1 justify-end w-full">
@@ -67,22 +67,24 @@ function Header() {
             name="Shivendra Hada"
             round
             size="50"
-            color="#fccd0a"
+            color="#fbce09"
             fgColor="#322a0d"
           />
         </div>
       </div>
 
-      <div className="flex items-center justify-center px-5 py-2 md:py-5">
+      <div className="flex items-center justify-center px-5 py-5">
         <p className="flex p-5 items-center text-sm font-bold pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#917600]">
           <UserCircleIcon
             className={`inline-block h-10 w-10 md:w-15 mr-1 text-[#917600] ${
               loading && "animate-spin"
             }`}
           />
-          {suggestion && !loading
-            ? suggestion
-            : "Generating an awesome quote just for you..."}
+          <span>
+            {suggestion && !loading
+              ? suggestion
+              : "Generating an awesome quote just for you..."}
+          </span>
         </p>
       </div>
     </header>

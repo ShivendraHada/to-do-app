@@ -18,12 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <body
-        className={
-          nunito.className +
-          " bg-gradient-to-b from-yellow-300 to-white-100 bg-no-repeat bg-cover"
-        }
+        className={`${nunito.className} min-h-screen bg-gradient-to-t from-yellow-100 via-yellow-300 to-yellow-600 bg-no-repeat`}
       >
         {children}
         <Modal />
