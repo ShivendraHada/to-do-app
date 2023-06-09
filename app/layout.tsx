@@ -1,6 +1,7 @@
-import { Nunito } from "@next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Modal from "@/components/Modal/AddTaskModal/AddTaskModal";
+import Pwa from "./Pwa";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -10,6 +11,8 @@ export const metadata = {
   title: "To-do App",
   description:
     "Effortlessly Navigate Your Personal and Professional Responsibilities",
+  manifest: "./manifest.json",
+  themeColor: "#fbce09",
 };
 
 export default function RootLayout({
@@ -24,6 +27,7 @@ export default function RootLayout({
       >
         {children}
         <Modal />
+        <Pwa />
       </body>
     </html>
   );

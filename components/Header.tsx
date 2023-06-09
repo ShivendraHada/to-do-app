@@ -56,7 +56,7 @@ function Header() {
               className="flex-1 outline-none p-2"
               onChange={(e) => setSearchString(e.target.value)}
             />
-            <button type="submit" hidden>
+            <button type="submit" hidden aria-label="Search">
               Search
             </button>
           </form>
@@ -74,9 +74,9 @@ function Header() {
       </div>
 
       <div className="flex items-center justify-center px-5 py-5">
-        <p className="flex p-5 items-center text-sm font-bold pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#917600]">
+        <p className="flex p-5 items-center text-sm font-bold pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#3f370c]">
           <UserCircleIcon
-            className={`inline-block h-10 w-10 md:w-15 mr-1 text-[#917600] ${
+            className={`inline-block h-10 w-10 md:w-15 mr-1 ${
               loading && "animate-spin"
             }`}
           />

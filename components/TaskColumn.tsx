@@ -1,3 +1,5 @@
+"use client";
+
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import TodoCard from "./TaskCard";
@@ -94,6 +96,7 @@ function TaskColumn({ id, todos, index }: TaskColumnProps) {
 
                   <div className="flex items-end justify-center">
                     <button
+                      aria-label="Add"
                       onClick={handleAddTodo}
                       className="text-green-500 hover:text-green-600"
                     >

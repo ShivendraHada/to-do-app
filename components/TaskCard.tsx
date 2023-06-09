@@ -48,12 +48,13 @@ function TodoCard({
       ref={innerRef}
     >
       <div className="flex justify-between items-center p-5">
-        <p>{todo.title}</p>
+        <p className="mr-5">{todo.title}</p>
         <button
+          aria-label="Close"
           onClick={() => deleteTask(index, todo, id)}
           className="text-red-500 hover:text-red-600"
         >
-          <XCircleIcon className="ml-5 h-6 w-6" />
+          <XCircleIcon className="h-6 w-6" />
         </button>
       </div>
 
